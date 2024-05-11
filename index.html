@@ -6,8 +6,60 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cat energy</title>
+
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <header class="header">
+    <div class="header__inner container">
+      <img
+        src="images/logo.svg"
+        alt="Cat energy logo"
+        class="header__logo logo mobile-hidden"
+        width="202" height="59" loading="lazy"
+      >
+      <img
+        src="images/logo-mobile.svg"
+        alt="Cat energy logo for mobile devices"
+        class="header__logo logo mobile-visible"
+        width="33" height="38" loading="lazy"
+      >
+      <nav class="header__menu tablet-hidden">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link is-current">Главная</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Каталог продукции</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Подбор товара</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main class="content">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__info">
+          <h1 class="hero__title">
+            Функциональное<br>
+            питание для котов
+          </h1>
+          <div class="hero__description">
+            <p>Занялся собой? Займись котом!</p>
+          </div>
+          <button class="hero__button button" type="button">Подобрать программу</button>
+        </div>
+        <img
+          src="images/product.svg"
+          alt="Cat energy product"
+          class="hero__image"
+          width="552" height="449" loading="lazy">
+      </div>
+    </section>
+  </main>
 </body>
 </html>

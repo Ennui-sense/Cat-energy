@@ -22,10 +22,13 @@ svg * {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-family-title);
+  font-family: var(--font-family-alt);
+  line-height: 1;
+  font-weight: 400;
 }
 
 h1 {

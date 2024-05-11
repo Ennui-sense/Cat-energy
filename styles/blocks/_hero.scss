@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  padding-block: 223px 185px;
+  margin-bottom: 82px;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(104,183,56,1) 60%, rgba(104,183,56,1) 100%);
+  z-index: -1;
+  background-blend-mode: multiply;
+
+  &::after {
+    content: "";
+    position:absolute;
+    right: -250px;
+    bottom: 0;
+    width: 900px;
+    aspect-ratio: 1;
+    background: url("../../images/cat (1).png") no-repeat right;
+    z-index: -2;
+    opacity: 0.4;
+  }
+
+  @include tablet {
+    background: var(--color-light);
+    padding-block: 140px 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__info {
+    padding-left: 87px;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    @include fluid-text(20, 14);
+
+    font-family: var(--font-family-alt);
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 35%;
+    top: 60%;
+
+    @include tablet {
+      width: calc(100% - var(--container-padding-x) * 2);
+      height: auto;
+      left: 50%;
+      translate: -50% 0;
+      z-index: -1;
+    }
+  }
+}
