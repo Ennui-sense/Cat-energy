@@ -205,17 +205,28 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(36px, 4.1666666667vw, 60px);
+  font-size: 60px;
 }
 
 h2 {
-  font-size: clamp(36px, 4.1666666667vw, 60px);
+  font-size: 60px;
 }
 
 h3 {
-  font-size: clamp(24px, 2.5vw, 36px);
+  font-size: 36px;
 }
 
+@media (max-width: 320px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+}
 .button {
   height: var(--button-height);
   background-color: var(--color-accent);
@@ -322,35 +333,39 @@ h3 {
 }
 
 .hero {
-  position: relative;
   padding-block: 223px 185px;
   margin-bottom: 82px;
-  background: linear-gradient(90deg, rgb(255, 255, 255) 15%, rgb(104, 183, 56) 60%, rgb(104, 183, 56) 100%);
-  z-index: -1;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 30%, rgb(104, 183, 56) 60%, rgb(104, 183, 56) 100%), url("../../images/cat (1).png") no-repeat right top;
+  z-index: -3;
   background-blend-mode: multiply;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -250px;
-  bottom: 0;
-  width: 900px;
-  aspect-ratio: 1;
-  background: url("../../images/cat (1).png") no-repeat right;
-  z-index: -2;
-  opacity: 0.4;
+  overflow-x: hidden;
 }
 @media (max-width: 767px) {
   .hero {
     background: var(--color-light);
     padding-block: 140px 0;
   }
-  .hero::after {
-    display: none;
+}
+.hero__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .hero__inner {
+    padding-bottom: 526px;
   }
 }
 .hero__info {
-  padding-left: 87px;
+  z-index: 10;
+}
+@media (min-width: 321px) {
+  .hero__info {
+    padding-left: 87px;
+  }
+}
+.hero__title {
+  text-wrap: nowrap;
 }
 .hero__title:not(:last-child) {
   margin-bottom: 40px;
@@ -363,18 +378,21 @@ h3 {
 .hero__description:not(:last-child) {
   margin-bottom: 50px;
 }
+.hero__button {
+  text-wrap: nowrap;
+}
 .hero__image {
   position: absolute;
   left: 35%;
-  top: 60%;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   .hero__image {
-    width: calc(100% - var(--container-padding-x) * 2);
+    width: 100%;
     height: auto;
     left: 50%;
+    bottom: 0;
     translate: -50% 0;
-    z-index: -1;
   }
 }
 
